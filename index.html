@@ -1,146 +1,875 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Islamic School</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f7f3eb;
-      color: #333;
-    }
-    header {
-      background: #006b4f;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      background: #004f38;
-    }
-    nav a {
-      color: white;
-      padding: 14px 20px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    nav a:hover {
-      background: #003726;
-    }
-    section {
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .hero {
-      background: url('https://images.unsplash.com/photo-1562004760-aceed7bb0fe7?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
-      height: 300px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-size: 2em;
-      font-weight: bold;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-    }
-    h2 {
-      color: #006b4f;
-      margin-top: 0;
-    }
-    footer {
-      background: #004f38;
-      color: white;
-      text-align: center;
-      padding: 15px 0;
-      margin-top: 30px;
-    }
-    .card {
-      background: white;
-      padding: 15px;
-      margin: 15px 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      border-radius: 5px;
-    }
-    .cta {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #006b4f;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      margin-top: 10px;
-    }
-    .cta:hover {
-      background: #004f38;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madrasa Al-Noor - Islamic School</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            background-color: #f8f7f3;
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Islamic Pattern Background */
+        .islamic-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M20 20c0 11.046-8.954 20-20 20v-40c11.046 0 20 8.954 20 20z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1b4332, #2d6a4f);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #d4af37;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .arabic-text {
+            font-size: 1.2rem;
+            color: #d4af37;
+            margin-top: 0.2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        nav a:hover {
+            background-color: #d4af37;
+            color: #1b4332;
+            border-color: #d4af37;
+        }
+
+        /* Hero Section */
+        .hero {
+            /* REPLACE THIS: Add your school's main photo */
+            background: linear-gradient(rgba(27, 67, 50, 0.8), rgba(45, 106, 79, 0.8)), 
+                        url("images/school-building.jpg"); /* ADD YOUR IMAGE HERE */
+            /* FALLBACK: Current pattern if no image */
+            background: linear-gradient(rgba(27, 67, 50, 0.8), rgba(45, 106, 79, 0.8)), 
+                        url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4af37' fill-opacity='0.1'%3E%3Cpolygon points='50,0 60,35 100,35 65,57 75,92 50,70 25,92 35,57 0,35 40,35'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #d4af37;
+            color: #1b4332;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .cta-button:hover {
+            background-color: #b8941f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid #d4af37;
+        }
+
+        .section h2 {
+            color: #1b4332;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section h2:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #d4af37;
+            margin: 0.5rem auto;
+        }
+
+        .section h3 {
+            color: #2d6a4f;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .program-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+            transition: transform 0.3s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .program-card h4 {
+            color: #1b4332;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            padding-left: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            background: #d4af37;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #d4af37;
+        }
+
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 15px;
+            width: 2px;
+            height: calc(100% + 1rem);
+            background: #d4af37;
+        }
+
+        .timeline-item:last-child:after {
+            display: none;
+        }
+
+        .timeline-year {
+            font-weight: bold;
+            color: #1b4332;
+            font-size: 1.2rem;
+        }
+
+        /* Donation Section */
+        .donation-projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        .project-image {
+            height: 200px;
+            /* ADD REAL IMAGES HERE */
+            background: linear-gradient(45deg, #2d6a4f, #d4af37);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        /* Image overlay for readability */
+        .project-image:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(27, 67, 50, 0.3);
+        }
+
+        /* Specific project images - ADD YOUR IMAGES HERE */
+        .mosque-project { background-image: url("images/mosque-construction.jpg"); }
+        .library-project { background-image: url("images/library-interior.jpg"); }
+        .playground-project { background-image: url("images/playground-area.jpg"); }
+        .computer-project { background-image: url("images/computer-lab.jpg"); }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            color: #1b4332;
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            height: 10px;
+            border-radius: 5px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2d6a4f, #d4af37);
+            border-radius: 5px;
+            transition: width 0.5s ease;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .donate-btn {
+            background: linear-gradient(45deg, #1b4332, #2d6a4f);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .donate-btn:hover {
+            background: linear-gradient(45deg, #2d6a4f, #40916c);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: #1b4332;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #d4af37;
+            margin-bottom: 1rem;
+        }
+
+        .prayer-times {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                justify-content: center;
+                margin-top: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .programs-grid,
+            .donation-projects {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .islamic-quote {
+            background: linear-gradient(135deg, #d4af37, #b8941f);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin: 3rem 0;
+            border-radius: 10px;
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+    </style>
 </head>
-<body>
+<body class="islamic-pattern">
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <div class="logo">🕌 Madrasa Al-Noor</div>
+                    <div class="arabic-text">مدرسة النور الإسلامية</div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#history">History</a></li>
+                        <li><a href="#donations">Donations</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-  <header>
-    <h1>Darul Hikmah Islamic School</h1>
-    <p>Educating Hearts and Minds for a Brighter Future</p>
-  </header>
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Welcome to Madrasa Al-Noor</h1>
+            <p>Nurturing young minds with Islamic values and modern education. Building tomorrow's Muslim leaders through comprehensive Islamic curriculum and character development.</p>
+            <a href="#programs" class="cta-button">Explore Our Programs</a>
+        </div>
+    </section>
 
-  <nav>
-    <a href="#about">About Us</a>
-    <a href="#programs">Programs</a>
-    <a href="#admissions">Admissions</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <main class="container">
+        <div class="islamic-quote">
+            "And whoever gives life to a soul, it is as if he has given life to all mankind" - Quran 5:32
+        </div>
 
-  <div class="hero">
-    Welcome to Darul Hikmah
-  </div>
+        <section class="section" id="about">
+            <h2>About Our School</h2>
+            <p>Madrasa Al-Noor is dedicated to providing exceptional Islamic education that combines traditional Islamic teachings with modern academic excellence. Our mission is to develop well-rounded Muslim students who are confident in their faith, excel academically, and contribute positively to society.</p>
+            
+            <h3>Our Islamic Educational Philosophy</h3>
+            <p>We believe that true education encompasses both worldly knowledge and spiritual development. Our curriculum integrates Quranic teachings, Hadith studies, and Islamic values with contemporary subjects, ensuring our students are prepared for both this life and the hereafter.</p>
+            
+            <h3>Our Values</h3>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <h4>🤲 Taqwa (God-Consciousness)</h4>
+                    <p>Developing a strong relationship with Allah through worship, reflection, and righteous action.</p>
+                </div>
+                <div class="program-card">
+                    <h4>📚 Ilm (Knowledge)</h4>
+                    <p>Pursuing both religious and worldly knowledge as commanded by Islam.</p>
+                </div>
+                <div class="program-card">
+                    <h4>🤝 Akhlaq (Character)</h4>
+                    <p>Building excellent character following the example of Prophet Muhammad (PBUH).</p>
+                </div>
+                <div class="program-card">
+                    <h4>🌍 Service</h4>
+                    <p>Contributing to the betterment of our community and humanity.</p>
+                </div>
+            </div>
+        </section>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <div class="card">
-      <p>Darul Hikmah Islamic School is dedicated to nurturing young minds with both academic excellence and strong Islamic values. We strive to create a balanced environment that promotes knowledge, spirituality, and moral integrity.</p>
+        <section class="section" id="programs">
+            <h2>Academic Programs</h2>
+            
+            <h3>Islamic Studies Curriculum</h3>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <h4>📖 Quran Studies</h4>
+                    <p>Comprehensive Quranic education including Tajweed, Tafsir, and memorization programs. Students learn proper recitation and understand the meanings and context of Quranic verses.</p>
+                </div>
+                <div class="program-card">
+                    <h4>🕌 Islamic History & Seerah</h4>
+                    <p>Study of Islamic civilization, Prophet Muhammad's biography, and the stories of the Companions, providing context for Islamic teachings.</p>
+                </div>
+                <div class="program-card">
+                    <h4>⚖️ Fiqh (Islamic Jurisprudence)</h4>
+                    <p>Understanding Islamic law and its practical application in daily life, covering worship, transactions, and social interactions.</p>
+                </div>
+            </div>
+
+            <h3>Hifz Program (Quran Memorization)</h3>
+            <p>Our structured Hifz program helps students memorize the Holy Quran with proper Tajweed. We provide:</p>
+            <ul style="margin: 1rem 0; padding-left: 2rem;">
+                <li>Experienced Huffaz teachers</li>
+                <li>Small class sizes for individual attention</li>
+                <li>Regular revision schedules</li>
+                <li>Annual Quran competition</li>
+            </ul>
+
+            <h3>Arabic Language Program</h3>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <h4>🔤 Classical Arabic</h4>
+                    <p>Foundation in Arabic grammar, syntax, and vocabulary to understand Islamic texts directly.</p>
+                </div>
+                <div class="program-card">
+                    <h4>💬 Conversational Arabic</h4>
+                    <p>Practical Arabic speaking skills for communication and cultural understanding.</p>
+                </div>
+            </div>
+
+            <h3>General Academic Subjects</h3>
+            <p>All subjects taught with an Islamic perspective, including:</p>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <h4>Mathematics & Sciences</h4>
+                    <p>Exploring Allah's creation through scientific inquiry while maintaining Islamic worldview.</p>
+                </div>
+                <div class="program-card">
+                    <h4>English & Literature</h4>
+                    <p>Developing strong communication skills while studying literature that aligns with Islamic values.</p>
+                </div>
+                <div class="program-card">
+                    <h4>Social Studies</h4>
+                    <p>Understanding world cultures and history through an Islamic lens.</p>
+                </div>
+            </div>
+
+            <h3>Age Groups & Class Levels</h3>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <h4>🌱 Early Years (Ages 3-6)</h4>
+                    <p>Foundation Islamic concepts, basic Arabic, and Quran introduction through play-based learning.</p>
+                </div>
+                <div class="program-card">
+                    <h4>📚 Elementary (Ages 7-11)</h4>
+                    <p>Core Islamic studies, Arabic literacy, and integrated academic curriculum.</p>
+                </div>
+                <div class="program-card">
+                    <h4>🎓 Secondary (Ages 12-18)</h4>
+                    <p>Advanced Islamic scholarship, Hifz completion track, and college preparation.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="history">
+            <h2>Our History</h2>
+            <p>Founded with the vision of providing authentic Islamic education, Madrasa Al-Noor has been serving the Muslim community for decades. Our journey reflects our commitment to excellence in both religious and academic education.</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1985</div>
+                    <h4>Foundation</h4>
+                    <p>Madrasa Al-Noor was established by a group of dedicated community members with just 25 students in a small rented building.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1992</div>
+                    <h4>First Hafiz Graduation</h4>
+                    <p>Our first student completed Hifz, marking the success of our Quran memorization program.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1998</div>
+                    <h4>New Campus</h4>
+                    <p>Moved to our current purpose-built campus with modern facilities including library, computer lab, and prayer hall.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2005</div>
+                    <h4>Accreditation</h4>
+                    <p>Received official accreditation, allowing our graduates to pursue higher education seamlessly.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2015</div>
+                    <h4>500 Graduates</h4>
+                    <p>Celebrated our 500th graduate, with alumni serving communities worldwide as teachers, doctors, engineers, and Islamic scholars.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <h4>Digital Learning</h4>
+                    <p>Launched online learning platforms and digital resources while maintaining our traditional teaching excellence.</p>
+                </div>
+            </div>
+
+            <h3>Leadership & Faculty</h3>
+            <p>Our dedicated team includes:</p>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <h4>Sheikh Ahmad Al-Mansouri - Principal</h4>
+                    <p>Ph.D. in Islamic Studies, 25+ years in Islamic education</p>
+                </div>
+                <div class="program-card">
+                    <h4>Ustadha Fatima Hassan - Academic Director</h4>
+                    <p>M.A. in Arabic Literature, Certified Qira'at instructor</p>
+                </div>
+                <div class="program-card">
+                    <h4>Dr. Omar Khalil - Curriculum Coordinator</h4>
+                    <p>Ph.D. in Education, specialist in Islamic curriculum development</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="donations">
+            <h2>Building Projects & Donations</h2>
+            <p>Help us expand our facilities to serve more students and enhance their learning experience. Your contribution is a sadaqah jariyah that will benefit generations of Muslim students.</p>
+
+            <div class="islamic-quote">
+                "The believer's shade on the Day of Resurrection will be his charity." - Hadith
+            </div>
+
+            <h3>Current Building Projects</h3>
+            <div class="donation-projects">
+                <div class="project-card">
+                    <div class="project-image mosque-project">🕌</div>
+                    <div class="project-content">
+                        <div class="project-title">New Mosque Expansion</div>
+                        <p>Expanding our prayer hall to accommodate 500+ worshippers for daily prayers and Jumu'ah.</p>
+                        <div class="progress-text">
+                            <span>Raised: $75,000</span>
+                            <span>Goal: $150,000</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 50%"></div>
+                        </div>
+                        <button class="donate-btn" onclick="showDonationModal('mosque')">Donate for Mosque</button>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image library-project">📚</div>
+                    <div class="project-content">
+                        <div class="project-title">Islamic Library Construction</div>
+                        <p>Building a comprehensive Islamic library with Arabic and English Islamic literature.</p>
+                        <div class="progress-text">
+                            <span>Raised: $30,000</span>
+                            <span>Goal: $80,000</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 37.5%"></div>
+                        </div>
+                        <button class="donate-btn" onclick="showDonationModal('library')">Donate for Library</button>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image playground-project">🎮</div>
+                    <div class="project-content">
+                        <div class="project-title">Children's Playground</div>
+                        <p>Safe outdoor play area for our younger students with Islamic-themed playground equipment.</p>
+                        <div class="progress-text">
+                            <span>Raised: $15,000</span>
+                            <span>Goal: $45,000</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 33.3%"></div>
+                        </div>
+                        <button class="donate-btn" onclick="showDonationModal('playground')">Donate for Playground</button>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image computer-project">💻</div>
+                    <div class="project-content">
+                        <div class="project-title">Computer Lab Upgrade</div>
+                        <p>Modern computer lab for digital learning and Islamic software educational tools.</p>
+                        <div class="progress-text">
+                            <span>Raised: $8,000</span>
+                            <span>Goal: $35,000</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 22.8%"></div>
+                        </div>
+                        <button class="donate-btn" onclick="showDonationModal('computer')">Donate for Computer Lab</button>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Other Ways to Support</h3>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <h4>💰 General School Fund</h4>
+                    <p>Support overall school operations, teacher salaries, and maintenance.</p>
+                    <button class="donate-btn" onclick="showDonationModal('general')">Donate to General Fund</button>
+                </div>
+                <div class="program-card">
+                    <h4>🎓 Student Scholarships</h4>
+                    <p>Help underprivileged students access quality Islamic education.</p>
+                    <button class="donate-btn" onclick="showDonationModal('scholarship')">Sponsor a Student</button>
+                </div>
+                <div class="program-card">
+                    <h4>📖 Quran Distribution</h4>
+                    <p>Provide Mushaf copies for students and community members.</p>
+                    <button class="donate-btn" onclick="showDonationModal('quran')">Donate Quran Copies</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p>📍 123 Islamic Center Drive<br>
+                    Community City, State 12345</p>
+                    <p>📞 (555) 123-4567</p>
+                    <p>✉️ info@madrasaalnoor.org</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Prayer Times</h3>
+                    <div class="prayer-times">
+                        <div>Fajr: 5:30 AM</div>
+                        <div>Dhuhr: 1:15 PM</div>
+                        <div>Asr: 4:45 PM</div>
+                        <div>Maghrib: 7:20 PM</div>
+                        <div>Isha: 8:45 PM</div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>School Hours</h3>
+                    <p>Monday - Friday: 8:00 AM - 3:30 PM<br>
+                    Saturday: 9:00 AM - 2:00 PM<br>
+                    Sunday: Closed</p>
+                    <h3>Weekend Classes</h3>
+                    <p>Saturday & Sunday Islamic Studies<br>
+                    Ages 6-16 welcome</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #2d6a4f;">
+                <p>&copy; 2024 Madrasa Al-Noor. All rights reserved.</p>
+                <p style="color: #d4af37; font-style: italic;">"And Allah knows best" - وَاللَّهُ أَعْلَم</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Donation Modal -->
+    <div id="donationModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background: white; padding: 2rem; border-radius: 10px; max-width: 500px; width: 90%;">
+            <h3 style="color: #1b4332; margin-bottom: 1rem;" id="modalTitle">Make a Donation</h3>
+            <p id="modalDescription">Your donation will make a direct impact on our students' education.</p>
+            
+            <div style="margin: 1.5rem 0;">
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Donation Amount:</label>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1rem;">
+                    <button onclick="setAmount(25)" class="amount-btn" style="padding: 0.8rem; border: 2px solid #d4af37; background: white; border-radius: 5px; cursor: pointer;">$25</button>
+                    <button onclick="setAmount(50)" class="amount-btn" style="padding: 0.8rem; border: 2px solid #d4af37; background: white; border-radius: 5px; cursor: pointer;">$50</button>
+                    <button onclick="setAmount(100)" class="amount-btn" style="padding: 0.8rem; border: 2px solid #d4af37; background: white; border-radius: 5px; cursor: pointer;">$100</button>
+                </div>
+                <input type="number" id="customAmount" placeholder="Enter custom amount" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 5px; margin-bottom: 1rem;">
+            </div>
+
+            <div style="display: flex; gap: 1rem;">
+                <button onclick="processDonation()" style="flex: 1; background: #1b4332; color: white; border: none; padding: 1rem; border-radius: 5px; font-weight: bold; cursor: pointer;">Donate Now</button>
+                <button onclick="closeDonationModal()" style="flex: 1; background: #ccc; color: #333; border: none; padding: 1rem; border-radius: 5px; cursor: pointer;">Cancel</button>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <section id="programs">
-    <h2>Our Programs</h2>
-    <div class="card">
-      <ul>
-        <li>Tahfiz Al-Quran</li>
-        <li>Islamic Studies</li>
-        <li>Primary and Secondary Education</li>
-        <li>Extra-curricular Activities</li>
-      </ul>
-    </div>
-  </section>
+    <script>
+        // Donation Modal Functions
+        let selectedAmount = 0;
+        let currentProject = '';
 
-  <section id="admissions">
-    <h2>Admissions</h2>
-    <div class="card">
-      <p>We welcome students from diverse backgrounds who are eager to learn and grow in an Islamic environment. Contact us for enrollment details and application deadlines.</p>
-      <a href="#contact" class="cta">Apply Now</a>
-    </div>
-  </section>
+        const projectDetails = {
+            mosque: {
+                title: "Donate for Mosque Expansion",
+                description: "Help us build a larger prayer hall for our growing community. Your donation will provide a sacred space for daily prayers, Jumu'ah, and community gatherings."
+            },
+            library: {
+                title: "Donate for Islamic Library",
+                description: "Support the construction of our Islamic library with books in Arabic and English, creating a center for Islamic learning and research."
+            },
+            playground: {
+                title: "Donate for Children's Playground",
+                description: "Help create a safe, fun outdoor space for our young students to play and develop their physical abilities."
+            },
+            computer: {
+                title: "Donate for Computer Lab",
+                description: "Equip our students with modern technology skills through updated computers and educational software."
+            },
+            general: {
+                title: "General School Donation",
+                description: "Support our school's daily operations, teacher salaries, utilities, and maintenance costs."
+            },
+            scholarship: {
+                title: "Student Scholarship Fund",
+                description: "Help provide Islamic education to students from low-income families through our scholarship program."
+            },
+            quran: {
+                title: "Quran Distribution Fund",
+                description: "Sponsor copies of the Holy Quran for our students and community members."
+            }
+        };
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <div class="card">
-      <p>Email: info@darulhikmah.edu.my</p>
-      <p>Phone: +60 12-345 6789</p>
-      <p>Address: Jalan Ilmu, Kuala Lumpur, Malaysia</p>
-    </div>
-  </section>
+        function showDonationModal(project) {
+            currentProject = project;
+            const modal = document.getElementById('donationModal');
+            const title = document.getElementById('modalTitle');
+            const description = document.getElementById('modalDescription');
+            
+            title.textContent = projectDetails[project].title;
+            description.textContent = projectDetails[project].description;
+            
+            modal.style.display = 'flex';
+            // Reset form
+            selectedAmount = 0;
+            document.getElementById('customAmount').value = '';
+            updateAmountButtons();
+        }
 
-  <footer>
-    &copy; 2025 Darul Hikmah Islamic School. All Rights Reserved.
-  </footer>
+        function closeDonationModal() {
+            document.getElementById('donationModal').style.display = 'none';
+        }
 
-</body>
-</html>
+        function setAmount(amount) {
+            selectedAmount = amount;
+            document.getElementById('customAmount').value = amount;
+            updateAmountButtons();
+        }
+
+        function updateAmountButtons() {
+            const buttons = document.querySelectorAll('.amount-btn');
+            buttons.forEach(btn => {
+                btn.style.background = 'white';
+                btn.style.color = '#333';
+            });
+            
+            // Highlight selected amount
+            const amounts = [25, 50, 100];
+            const index = amounts.indexOf(selectedAmount);
+            if (index !== -1) {
+                buttons[index].style.background = '#d4af37';
+                buttons[index].style.color = 'white';
+            }
+        }
+
+        function processDonation() {
+            const customAmount = document.getElementById('customAmount').value;
+            const donationAmount = customAmount || selectedAmount;
+            
+            if (!donationAmount || donationAmount <= 0) {
+                alert('Please select or enter a donation amount.');
+                return;
+            }
+            
+            // Simulate donation processing
+            alert(`Thank you for your generous donation of ${donationAmount} for ${projectDetails[currentProject].title}!\n\nBarakallahu feeki! Your contribution will make a real difference in our students' education.\n\nNote: In a real website, this would redirect to a secure payment processor like PayPal, Stripe, or Islamic banking solution.`);
+            
+            closeDonationModal();
+        }
+
+        // Handle custom amount input
+        document.addEventListener('DOMContentLoaded', function() {
+            const customAmountInput = document.getElementById('customAmount');
+            if (customAmountInput) {
+                customAmountInput.addEventListener('input', function() {
+                    selectedAmount = parseFloat(this.value) || 0;
+                    updateAmountButtons();
+                });
+            }
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('donationModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeDonationModal();
+            }
+        });
+    </script>
