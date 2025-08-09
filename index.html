@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sekolah Islam al-Falah</title>
+
+  <!-- Tailwind CDN (no build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Optional fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+    .arabic { font-family: "Noto Sans Arabic", sans-serif; }
+    /* small visual tweak for progress bars on plain Tailwind */
+    .progress-bg { background-color: #e6f4ea; }
+    .progress-fill { background-color: #166534; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-green-700 flex items-center justify-center text-white font-bold">IS</div>
+        <div>
+          <h1 class="text-lg font-semibold">Sekolah Islam al-Falah</h1>
+          <p class="text-xs text-slate-500">Mendidik dengan ilmu & akhlak</p>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#programs" class="hover:underline">Programs</a>
+        <a href="#projects" class="hover:underline">Projects</a>
+        <a href="#donate" id="donateBtn" class="text-green-700 font-semibold cursor-pointer">Donate</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </nav>
+
+      <button id="mobileToggle" class="md:hidden p-2" aria-label="open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" id="mobileIcon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden md:hidden border-t">
+      <div class="px-4 py-4 flex flex-col gap-2">
+        <a href="#about" class="block">About</a>
+        <a href="#programs" class="block">Programs</a>
+        <a href="#projects" class="block">Projects</a>
+        <a id="donateBtnMobile" class="text-green-700 font-semibold cursor-pointer">Donate</a>
+        <a href="#contact" class="block">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-6xl mx-auto px-4 py-10">
+
+    <!-- HERO -->
+    <section class="bg-gradient-to-br from-green-700 to-sky-700 text-white rounded-2xl p-8 lg:p-14 shadow-lg overflow-hidden">
+      <div class="flex flex-col lg:flex-row items-center gap-8">
+        <div class="flex-1">
+          <h2 class="text-3xl lg:text-4xl font-extrabold">Mendidik Hati dan Akal — Menuju Generasi Rabbani</h2>
+          <p class="mt-4 text-slate-100/90">Sekolah Islam al-Falah menggabungkan pengajaran agama yang mantap dengan pendidikan akademik berkualiti — berteraskan nilai akhlak dan ilmu.</p>
+
+          <div class="mt-6 flex gap-3">
+            <a href="#programs" class="bg-white text-green-700 px-4 py-2 rounded-lg font-semibold shadow">Lihat Program</a>
+            <button id="heroDonate" class="bg-transparent border border-white px-4 py-2 rounded-lg">Derma Sekarang</button>
+          </div>
+
+          <div class="mt-6 grid grid-cols-3 gap-3 text-sm text-white/90">
+            <div>
+              <div class="font-bold">Asrama</div>
+              <div class="text-xs">Kemasukan penuh bimbingan</div>
+            </div>
+            <div>
+              <div class="font-bold">Hifz Terstruktur</div>
+              <div class="text-xs">Kurikulum harian & hafal
