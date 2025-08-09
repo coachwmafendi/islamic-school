@@ -1,84 +1,146 @@
-<!doctype html>
-<html lang="ms">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sekolah Islam al-Falah</title>
-
-  <!-- Tailwind CDN (no build step) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Optional fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Islamic School</title>
   <style>
-    body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
-    .arabic { font-family: "Noto Sans Arabic", sans-serif; }
-    /* small visual tweak for progress bars on plain Tailwind */
-    .progress-bg { background-color: #e6f4ea; }
-    .progress-fill { background-color: #166534; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f3eb;
+      color: #333;
+    }
+    header {
+      background: #006b4f;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #004f38;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: #003726;
+    }
+    section {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1562004760-aceed7bb0fe7?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 2em;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+    h2 {
+      color: #006b4f;
+      margin-top: 0;
+    }
+    footer {
+      background: #004f38;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 30px;
+    }
+    .card {
+      background: white;
+      padding: 15px;
+      margin: 15px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 5px;
+    }
+    .cta {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #006b4f;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+    .cta:hover {
+      background: #004f38;
+    }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body>
 
-  <!-- Header -->
-  <header class="bg-white shadow sticky top-0 z-40">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-full bg-green-700 flex items-center justify-center text-white font-bold">IS</div>
-        <div>
-          <h1 class="text-lg font-semibold">Sekolah Islam al-Falah</h1>
-          <p class="text-xs text-slate-500">Mendidik dengan ilmu & akhlak</p>
-        </div>
-      </div>
-
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#about" class="hover:underline">About</a>
-        <a href="#programs" class="hover:underline">Programs</a>
-        <a href="#projects" class="hover:underline">Projects</a>
-        <a href="#donate" id="donateBtn" class="text-green-700 font-semibold cursor-pointer">Donate</a>
-        <a href="#contact" class="hover:underline">Contact</a>
-      </nav>
-
-      <button id="mobileToggle" class="md:hidden p-2" aria-label="open menu">
-        <svg xmlns="http://www.w3.org/2000/svg" id="mobileIcon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </div>
-
-    <div id="mobileMenu" class="hidden md:hidden border-t">
-      <div class="px-4 py-4 flex flex-col gap-2">
-        <a href="#about" class="block">About</a>
-        <a href="#programs" class="block">Programs</a>
-        <a href="#projects" class="block">Projects</a>
-        <a id="donateBtnMobile" class="text-green-700 font-semibold cursor-pointer">Donate</a>
-        <a href="#contact" class="block">Contact</a>
-      </div>
-    </div>
+  <header>
+    <h1>Darul Hikmah Islamic School</h1>
+    <p>Educating Hearts and Minds for a Brighter Future</p>
   </header>
 
-  <!-- Main -->
-  <main class="max-w-6xl mx-auto px-4 py-10">
+  <nav>
+    <a href="#about">About Us</a>
+    <a href="#programs">Programs</a>
+    <a href="#admissions">Admissions</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <!-- HERO -->
-    <section class="bg-gradient-to-br from-green-700 to-sky-700 text-white rounded-2xl p-8 lg:p-14 shadow-lg overflow-hidden">
-      <div class="flex flex-col lg:flex-row items-center gap-8">
-        <div class="flex-1">
-          <h2 class="text-3xl lg:text-4xl font-extrabold">Mendidik Hati dan Akal — Menuju Generasi Rabbani</h2>
-          <p class="mt-4 text-slate-100/90">Sekolah Islam al-Falah menggabungkan pengajaran agama yang mantap dengan pendidikan akademik berkualiti — berteraskan nilai akhlak dan ilmu.</p>
+  <div class="hero">
+    Welcome to Darul Hikmah
+  </div>
 
-          <div class="mt-6 flex gap-3">
-            <a href="#programs" class="bg-white text-green-700 px-4 py-2 rounded-lg font-semibold shadow">Lihat Program</a>
-            <button id="heroDonate" class="bg-transparent border border-white px-4 py-2 rounded-lg">Derma Sekarang</button>
-          </div>
+  <section id="about">
+    <h2>About Us</h2>
+    <div class="card">
+      <p>Darul Hikmah Islamic School is dedicated to nurturing young minds with both academic excellence and strong Islamic values. We strive to create a balanced environment that promotes knowledge, spirituality, and moral integrity.</p>
+    </div>
+  </section>
 
-          <div class="mt-6 grid grid-cols-3 gap-3 text-sm text-white/90">
-            <div>
-              <div class="font-bold">Asrama</div>
-              <div class="text-xs">Kemasukan penuh bimbingan</div>
-            </div>
-            <div>
-              <div class="font-bold">Hifz Terstruktur</div>
-              <div class="text-xs">Kurikulum harian & hafal
+  <section id="programs">
+    <h2>Our Programs</h2>
+    <div class="card">
+      <ul>
+        <li>Tahfiz Al-Quran</li>
+        <li>Islamic Studies</li>
+        <li>Primary and Secondary Education</li>
+        <li>Extra-curricular Activities</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="admissions">
+    <h2>Admissions</h2>
+    <div class="card">
+      <p>We welcome students from diverse backgrounds who are eager to learn and grow in an Islamic environment. Contact us for enrollment details and application deadlines.</p>
+      <a href="#contact" class="cta">Apply Now</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="card">
+      <p>Email: info@darulhikmah.edu.my</p>
+      <p>Phone: +60 12-345 6789</p>
+      <p>Address: Jalan Ilmu, Kuala Lumpur, Malaysia</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Darul Hikmah Islamic School. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
